@@ -372,9 +372,9 @@ export function createStore<State>(
       calc((upd, _, {a, b}) => {
         const isVoidUpdate = isVoid(upd)
 
-        if (isVoidUpdate && !explicitSkipVoid) {
-          console.error(`${errorTitle}: ${requireExplicitSkipVoidMessage}`)
-        }
+        // if (isVoidUpdate && !explicitSkipVoid) {
+        //   console.error(`${errorTitle}: ${requireExplicitSkipVoidMessage}`)
+        // }
 
         return (
           ((isVoidUpdate && voidValueAllowed) || !isVoidUpdate) &&
@@ -411,9 +411,9 @@ export function createStore<State>(
     requireExplicitSkipVoidMessage,
     errorTitle,
   )
-  if (derived && isVoidDefaultState && !explicitSkipVoid) {
-    console.error(`${errorTitle}: ${requireExplicitSkipVoidMessage}`)
-  }
+  // if (derived && isVoidDefaultState && !explicitSkipVoid) {
+  //   console.error(`${errorTitle}: ${requireExplicitSkipVoidMessage}`)
+  // }
   own(store, [updates])
   if (config?.domain) {
     config.domain.hooks.store(store)
